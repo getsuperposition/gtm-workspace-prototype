@@ -12,10 +12,10 @@ export const THEMES = [
 ];
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('ocean');
   const [mounted, setMounted] = useState(false);
 
-  // On mount: Load theme from localStorage or system preference
+  // On mount: Load theme from localStorage or default to ocean
   useEffect(() => {
     setMounted(true);
 
@@ -23,13 +23,8 @@ export function ThemeProvider({ children }) {
 
     if (savedTheme && THEMES.find(t => t.id === savedTheme)) {
       setTheme(savedTheme);
-    } else {
-      // Check system preference for dark mode
-      const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-      setTheme(systemPreference);
     }
+    // Default stays as 'ocean' if no saved preference
   }, []);
 
   // When theme changes: Update DOM attribute and localStorage
