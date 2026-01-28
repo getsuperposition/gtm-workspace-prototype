@@ -1,0 +1,38 @@
+/* Chat-specific footer styles */
+.metaInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-2xs);
+}
+
+.companyText {
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.timestamp {
+  font-size: var(--font-size-2xs);
+  color: var(--color-text-light);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .companyText {
+    max-width: 100px;
+  }
+}

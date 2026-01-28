@@ -1,0 +1,175 @@
+.previewCard {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--spacing-sm);
+  width: 400px;
+  max-width: 90vw;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px var(--color-shadow);
+  z-index: 1000;
+  animation: fadeInUp 0.2s ease-out;
+  overflow: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.previewCard::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-white);
+  border-left: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  transform: rotate(45deg);
+}
+
+.previewContent {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.previewInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.companyName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+}
+
+.metaText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.companyLogos {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.attendees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.attendee {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.more {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.visitorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.visitor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.visitorName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.visitorRole {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.risks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background-color: #FEE2E2;
+  border-radius: var(--radius-md);
+}
+
+[data-theme="dark"] .risks {
+  background-color: #7F1D1D;
+}
+
+.riskLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: #991B1B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .riskLabel {
+  color: #FCA5A5;
+}
+
+.riskText {
+  line-height: 1.4;
+}
+
+.creator {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .previewCard {
+    width: 320px;
+    right: -20px;
+  }
+
+  .previewContent {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+}

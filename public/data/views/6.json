@@ -1,0 +1,120 @@
+{
+  "id": 6,
+  "name": "West Coast Expansion",
+  "isShared": false,
+  "tableData": {
+    "columns": [
+      { "id": "companyName", "label": "Company name", "type": "text", "visible": true, "sortable": true, "primary": true, "clickable": true },
+      { "id": "contactName", "label": "Contact name", "type": "text", "visible": true, "sortable": true, "primary": true },
+      { "id": "jobFunction", "label": "Job Function", "type": "text", "visible": true, "sortable": true },
+      { "id": "accountStatus", "label": "Account Status", "type": "badge", "visible": true, "sortable": true },
+      { "id": "country", "label": "Country", "type": "text", "visible": true, "sortable": true }
+    ],
+    "rows": [
+      {
+        "id": "1",
+        "contactName": "Marcus Chen",
+        "companyName": "Airbnb",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "2",
+        "contactName": "Olivia Parker",
+        "companyName": "Uber",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "3",
+        "contactName": "Nathan Brooks",
+        "companyName": "Lyft",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "4",
+        "contactName": "Sophie Turner",
+        "companyName": "DoorDash",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "5",
+        "contactName": "Isaac Morgan",
+        "companyName": "Stripe",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "6",
+        "contactName": "Maya Patel",
+        "companyName": "Square",
+        "jobFunction": "Finance",
+        "accountStatus": "Disqualified",
+        "country": "United States"
+      },
+      {
+        "id": "7",
+        "contactName": "Ethan Collins",
+        "companyName": "Dropbox",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "8",
+        "contactName": "Zoe Mitchell",
+        "companyName": "Pinterest",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "9",
+        "contactName": "Lucas Reed",
+        "companyName": "Snap Inc",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "10",
+        "contactName": "Ava Sanders",
+        "companyName": "Twitter",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "11",
+        "contactName": "Mason Wright",
+        "companyName": "Reddit",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "12",
+        "contactName": "Lily Foster",
+        "companyName": "Yelp",
+        "jobFunction": "Compliance",
+        "accountStatus": "Disqualified",
+        "country": "United States"
+      },
+      {
+        "id": "13",
+        "contactName": "Owen Hughes",
+        "companyName": "Twitch",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      }
+    ]
+  }
+}

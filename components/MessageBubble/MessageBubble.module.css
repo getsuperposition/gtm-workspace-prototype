@@ -1,0 +1,95 @@
+.messageWrapper {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userWrapper {
+  justify-content: flex-end;
+}
+
+.assistantWrapper {
+  justify-content: flex-start;
+}
+
+.messageBubble {
+  max-width: 70%;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  transition: background-color var(--transition-base);
+}
+
+.userBubble {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+.assistantBubble {
+  background-color: var(--color-border-light);
+  color: var(--color-text-primary);
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+.messageContent {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-bottom: var(--spacing-xs);
+}
+
+.messageTimestamp {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  margin-top: var(--spacing-xs);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.userBubble .messageTimestamp {
+  color: var(--color-white);
+}
+
+.assistantBubble .messageTimestamp {
+  color: var(--color-text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .messageBubble {
+    max-width: 85%;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .messageContent {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .messageBubble {
+    max-width: 90%;
+  }
+}
+
+/* Loading bubble styles */
+.loadingBubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 16px 20px;
+}

@@ -1,0 +1,49 @@
+/* Base icon wrapper styles */
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-md);
+  background-color: var(--color-border-light);
+  color: var(--color-text-secondary);
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+/* Size variants */
+.size-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.size-md {
+  width: 36px;
+  height: 36px;
+}
+
+.size-lg {
+  width: 40px;
+  height: 40px;
+}
+
+/* Alignment variants */
+.align-center {
+  align-items: center;
+}
+
+.align-flex-start {
+  align-items: flex-start;
+}
+
+/* Hover behavior - triggered by parent hover */
+/* This selector allows parent components to trigger the hover state */
+*:hover > .iconWrapper {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Direct hover on icon wrapper itself */
+.iconWrapper:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

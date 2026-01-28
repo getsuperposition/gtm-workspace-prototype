@@ -1,0 +1,124 @@
+.container {
+  margin-bottom: var(--spacing-sm);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+
+  padding: var(--spacing-xs) var(--spacing-sm);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.header:hover {
+  background: var(--color-border-light);
+}
+
+.header:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.headerIcon {
+  color: var(--color-brand);
+}
+
+.headerTitle {
+  flex: 1;
+  text-align: left;
+}
+
+.steps {
+  padding-left: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+}
+
+.stepIndicator {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.step.complete .stepIndicator {
+  color: #16a34a;
+}
+
+.step.active .stepIndicator {
+  color: var(--color-brand);
+}
+
+.step.pending .stepIndicator {
+  color: var(--color-text-light);
+}
+
+.activeDot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-brand);
+  border-radius: var(--radius-full);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pendingDot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-text-light);
+  border-radius: var(--radius-full);
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+}
+
+.stepTitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.step.pending .stepTitle {
+  color: var(--color-text-light);
+}
+
+.stepDetail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activeDot {
+    animation: none;
+  }
+}

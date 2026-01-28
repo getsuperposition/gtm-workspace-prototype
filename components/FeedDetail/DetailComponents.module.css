@@ -1,0 +1,635 @@
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.description {
+  margin: 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.notes {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+/* Company Styles */
+.companyHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.companyName {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.meetingMeta,
+.renewalMeta {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.companyLogos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.companyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.companyLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.moreAccounts {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+/* Attendee/Visitor Styles */
+.attendeeList,
+.visitorList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.attendeeCard,
+.visitorCard {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.attendeeName,
+.visitorName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.attendeeRole,
+.visitorRole {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.visitorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.visitorVisits {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.visitorInfluence {
+  font-size: var(--font-size-xs);
+  color: var(--color-brand);
+  font-weight: var(--font-weight-medium);
+}
+
+/* List Styles */
+.list {
+  margin: 0;
+  padding-left: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.list li {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Document List */
+.documentList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.documentLink {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.documentLink:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* History/Timeline Styles */
+.historyList,
+.timeline,
+.trendList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.historyItem,
+.timelineItem,
+.trendItem {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.historyDate,
+.timelineDate,
+.trendMonth {
+  color: var(--color-text-light);
+}
+
+.historyTopic,
+.timelineVisits,
+.trendUsers {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.historyOutcome,
+.timelinePages {
+  color: var(--color-text-secondary);
+}
+
+.trendScore {
+  font-weight: var(--font-weight-semibold);
+}
+
+.scoreGood { color: #059669; }
+.scoreMedium { color: #D97706; }
+.scorePoor { color: #DC2626; }
+
+/* Score Cards */
+.scoreCard,
+.healthScoreCard,
+.strengthCard,
+.revenueCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xl);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.scoreValue,
+.healthScore,
+.strengthScore {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.scoreLabel,
+.healthLabel,
+.strengthLabel {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.healthGood,
+.strengthGood {
+  color: #059669;
+}
+
+.healthMedium,
+.strengthMedium {
+  color: #D97706;
+}
+
+.healthPoor,
+.strengthPoor {
+  color: #DC2626;
+}
+
+.revenueValue {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Table Styles */
+.table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-border-light);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.pagePath {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.potential {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand);
+}
+
+.confidence {
+  font-weight: var(--font-weight-medium);
+}
+
+.confidenceHigh { color: #059669; }
+.confidenceMedium { color: #D97706; }
+.confidenceLow { color: #DC2626; }
+
+.relationship {
+  font-weight: var(--font-weight-medium);
+}
+
+.relationshipPositive { color: #059669; }
+.relationshipNeutral { color: #6B7280; }
+.relationshipUnknown { color: #9CA3AF; }
+
+/* Metrics Grid */
+.metricsGrid,
+.impactGrid,
+.contractGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.metricCard,
+.impactCard,
+.contractItem {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.metricLabel,
+.impactLabel,
+.contractLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  text-transform: capitalize;
+}
+
+.metricValue,
+.impactValue,
+.contractValue {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.contractTerms {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Tier Comparison */
+.tierComparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.tierBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 150px;
+}
+
+.tierLabel {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tierName {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.tierArrow {
+  font-size: var(--font-size-3xl);
+  color: var(--color-text-secondary);
+}
+
+/* Timeline Phases */
+.timelinePhases {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.phaseCard {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.phaseName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-transform: capitalize;
+}
+
+.phaseDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Risk Styles */
+.riskList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.riskCard {
+  padding: var(--spacing-md);
+  background-color: var(--color-danger-bg);
+  border-left: 4px solid var(--color-danger-dot);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+}
+
+/* Threat Styles */
+.threatList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.threatCard {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.threatCompetitor {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.threatActivity {
+  color: var(--color-text-secondary);
+}
+
+.threatDate {
+  color: var(--color-text-light);
+}
+
+/* Contact Styles */
+.contactList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.contactCard {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.contactHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.contactName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.contactRole,
+.contactCompany {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.contactMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--spacing-xs);
+  padding-top: var(--spacing-xs);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.relationshipBadge {
+  padding: 2px var(--spacing-xs);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badgeChampion {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.badgeStrongUser {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+[data-theme="dark"] .badgeChampion {
+  background-color: #065F46;
+  color: #D1FAE5;
+}
+
+[data-theme="dark"] .badgeStrongUser {
+  background-color: #1E40AF;
+  color: #DBEAFE;
+}
+
+.status {
+  font-weight: var(--font-weight-medium);
+}
+
+.statusIdentified { color: #059669; }
+.statusNotYetIdentified { color: #DC2626; }
+
+/* Competitor Info */
+.competitorInfo {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.competitorInfo strong {
+  color: var(--color-text-primary);
+}
+
+/* Created By */
+.createdBy {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-light);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .attendeeList,
+  .visitorList,
+  .contactList {
+    grid-template-columns: 1fr;
+  }
+
+  .metricsGrid,
+  .impactGrid,
+  .contractGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tierComparison {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .tierArrow {
+    transform: rotate(90deg);
+  }
+
+  .historyItem,
+  .timelineItem,
+  .trendItem {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .threatCard {
+    grid-template-columns: 1fr;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+  }
+}

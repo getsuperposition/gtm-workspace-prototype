@@ -1,0 +1,146 @@
+/* No backdrop - panel is part of layout */
+
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-white);
+}
+
+/* Header - taller for better visual balance */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+
+  min-height: 60px;
+  padding: var(--spacing-sm) var(--spacing-md);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  min-width: 0;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}
+
+.headerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.headerButton:hover {
+  background: var(--color-border-light);
+  color: var(--color-text-primary);
+}
+
+.headerButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.headerButton.active {
+  background: var(--color-border-light);
+  color: var(--color-text-primary);
+}
+
+/* Close button wrapper */
+.closeButtonWrapper {
+  position: relative;
+}
+
+/* Close button - simple gray hover */
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid rgba(98, 99, 103, 0.4);
+  border-radius: var(--radius-full);
+
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.closeButton:hover {
+  background: var(--color-border-light);
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Close tooltip */
+.closeTooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  padding: var(--spacing-xs) var(--spacing-sm);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  white-space: nowrap;
+
+  background: var(--color-text-primary);
+  border-radius: var(--radius-md);
+
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.closeTooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 10px;
+  border: 4px solid transparent;
+  border-bottom-color: var(--color-text-primary);
+}
+
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contentInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

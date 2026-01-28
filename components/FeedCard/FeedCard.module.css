@@ -1,0 +1,87 @@
+.feedCard {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  transition:
+    transform var(--transition-lift),
+    box-shadow var(--transition-lift),
+    border-color var(--transition-lift);
+}
+
+.feedCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border);
+  box-shadow:
+    0 4px 12px -2px rgba(45, 45, 45, 0.06),
+    0 8px 24px -4px rgba(45, 45, 45, 0.04);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+  min-width: 0; /* Allows text truncation if needed */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+/* Active state styles for action buttons */
+.active {
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+}
+
+.activeLike {
+  color: var(--color-like);
+  background-color: var(--color-like-bg);
+}
+
+.activeDislike {
+  color: var(--color-dislike);
+  background-color: var(--color-dislike-bg);
+}
+
+.cardTitle {
+  margin: 0;
+}
+
+.instanceSlot {
+  border-top: 1px dashed var(--color-border);
+  border-bottom: 1px dashed var(--color-border);
+  background-color: var(--color-background);
+  overflow: visible; /* Ensure content isn't clipped */
+  padding: var(--spacing-0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feedCard {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cardHeader {
+    padding: var(--spacing-md);
+  }
+}

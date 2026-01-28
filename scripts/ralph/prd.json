@@ -1,0 +1,273 @@
+{
+  "projectName": "GTM Workspace V2 - Visual Refresh",
+  "branchName": "main",
+  "created": "2026-01-26",
+  "focus": ["Pulse Feed", "Chat Sidebar (Agentic)"],
+  "userStories": [
+    {
+      "id": "SETUP-001",
+      "title": "Project setup and dependency installation",
+      "description": "Install dependencies and verify the prototype runs correctly",
+      "acceptanceCriteria": [
+        "npm install completes without errors",
+        "npm run dev starts server on port 3001",
+        "Home page loads correctly",
+        "Feed page displays sample cards"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": "Installed 384 packages. Next.js 16.1.1 running on port 3001. Home page loads with 200 response."
+    },
+    {
+      "id": "FEED-001",
+      "title": "Audit existing Feed components",
+      "description": "Review and document the current state of Feed components from Richard's codebase",
+      "acceptanceCriteria": [
+        "Document FeedCard component structure and props",
+        "Document content type components (MeetingBrief, WebsiteVisits, etc.)",
+        "Document FeedElements (Tag, FeedActions)",
+        "Identify styling patterns and design tokens used",
+        "List any inconsistencies with Design OS guidelines"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": "Full audit documented in docs/FEED-AUDIT.md. Key findings: global transition:all needs removal, hardcoded colors need consolidation, missing tabular-nums for data."
+    },
+    {
+      "id": "FEED-002",
+      "title": "Audit existing Chat components",
+      "description": "Review and document the current state of Chat components",
+      "acceptanceCriteria": [
+        "Document ChatCard component structure",
+        "Document ChatInput component",
+        "Document ChatDetail component",
+        "Identify styling patterns",
+        "List any inconsistencies with Design OS guidelines"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": "Full audit documented in docs/CHAT-AUDIT.md. Key findings: 100vh needs dvh fix, missing tabular-nums on timestamps, hardcoded animation values. Agentic enhancements identified: streaming, artifacts, quick replies."
+    },
+    {
+      "id": "FIX-001",
+      "title": "Apply critical Design OS fixes",
+      "description": "Fix high-priority issues identified in audits",
+      "acceptanceCriteria": [
+        "Remove global transition: all from globals.css",
+        "Change 100vh to 100dvh in ChatDetail",
+        "Add tabular-nums to all timestamps and numeric displays",
+        "Consolidate hardcoded colors into CSS variables",
+        "Fix transition: all in component CSS modules",
+        "Build passes without errors"
+      ],
+      "priority": 3.5,
+      "passes": true,
+      "notes": "Removed global transition:all (line 137). Fixed 100vh→100dvh in ChatDetail. Added tabular-nums to: ChatCard.timestamp, MessageBubble.messageTimestamp, ActivityPreviewCard.timestamp, FeedDetail.timestamp, DetailComponents score values. Consolidated hardcoded colors in FeedCard (like/dislike) and DetailComponents (risk) to use CSS variables. Fixed transition:all in FeedCard, ChatCard, MessageBubble, DetailComponents. Build passes."
+    },
+    {
+      "id": "FEED-003",
+      "title": "Apply Design OS spacing tokens",
+      "description": "Update CSS variables to align with Design OS spacing scale",
+      "acceptanceCriteria": [
+        "Review current spacing tokens in globals.css",
+        "Map to Design OS recommended values",
+        "Update all components to use consistent spacing",
+        "No visual regressions in layout"
+      ],
+      "priority": 4,
+      "passes": false
+    },
+    {
+      "id": "FEED-004",
+      "title": "Apply Design OS typography tokens",
+      "description": "Update CSS variables to align with Design OS typography scale",
+      "acceptanceCriteria": [
+        "Review current font-size tokens",
+        "Map to Design OS recommended values",
+        "Ensure tabular-nums for data displays",
+        "Apply text-balance for headings where appropriate"
+      ],
+      "priority": 5,
+      "passes": false
+    },
+    {
+      "id": "FEED-005",
+      "title": "Apply Design OS color tokens",
+      "description": "Update color palette to align with Design OS guidelines",
+      "acceptanceCriteria": [
+        "Review current color tokens",
+        "Ensure proper contrast ratios (APCA preferred)",
+        "Verify dark mode consistency",
+        "Update hover/focus state colors"
+      ],
+      "priority": 6,
+      "passes": false
+    }
+  ],
+  "redesignStories": [
+    {
+      "id": "PF-001",
+      "title": "Create Task Queue context and types",
+      "description": "Set up state management for the artifact task queue system",
+      "acceptanceCriteria": [
+        "TaskType enum: meetingBrief, emailDraft, analysis",
+        "TaskStatus enum: queued, processing, done",
+        "Task interface with id, type, status, title, sourceId, progress, createdAt",
+        "TaskQueueContext with tasks array, addTask, updateTask methods",
+        "localStorage persistence for tasks",
+        "Build passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": "Created lib/types/tasks.ts with TaskType, TaskStatus, Task interface. Created contexts/TaskQueueContext.js with full state management, localStorage persistence, simulated processing with progress updates. Added provider to app/layout.js."
+    },
+    {
+      "id": "PF-002",
+      "title": "Create ActionButton component with states",
+      "description": "Button component that shows default, processing, and disabled states",
+      "acceptanceCriteria": [
+        "Default state: icon + label, dark solid style",
+        "Processing state: spinner icon + 'Creating {type}' label",
+        "Disabled state while processing",
+        "onClick triggers task creation",
+        "Accessible with proper aria-labels",
+        "Build passes"
+      ],
+      "priority": 11,
+      "passes": true,
+      "notes": "Created components/ActionButton with SVG icons for each task type, spinner animation, primary/secondary variants, small/medium sizes. Integrates with TaskQueueContext to add tasks and show processing state."
+    },
+    {
+      "id": "PF-003",
+      "title": "Create EmbeddedCard component",
+      "description": "Reusable embedded card for views, meetings, documents",
+      "acceptanceCriteria": [
+        "Icon prefix slot (calendar, grid, document)",
+        "Title and subtitle/metadata",
+        "Chevron for navigation",
+        "Subtle border styling",
+        "Clickable with hover state",
+        "Build passes"
+      ],
+      "priority": 12,
+      "passes": true,
+      "notes": "Created components/EmbeddedCard with view/meeting/document types, SVG icons, clickable variant with keyboard support, chevron animation on hover."
+    },
+    {
+      "id": "PF-004",
+      "title": "Create DataTable component with pagination",
+      "description": "Table component for visitor lists, promotions, etc.",
+      "acceptanceCriteria": [
+        "Column definition prop with header and accessor",
+        "Row data with action slot",
+        "Pagination with 'X-Y of Z' format",
+        "Previous/Next buttons",
+        "Responsive: stack on mobile",
+        "tabular-nums on numeric columns",
+        "Build passes"
+      ],
+      "priority": 13,
+      "passes": true,
+      "notes": "Created DataTable v4-inline variant optimized for pulse feed cards. Compact design with flex layout, action column support, pagination controls. Added to main DataTable.js variant routing."
+    },
+    {
+      "id": "PF-005",
+      "title": "Update Feed tabs to Open/Saved/Tasks",
+      "description": "Replace current tab structure with new design",
+      "acceptanceCriteria": [
+        "Three tabs: Open, Saved, Tasks",
+        "Badge counts on each tab",
+        "Tasks tab has blue dot indicator when processing",
+        "Active tab styling",
+        "Tab state persists in URL",
+        "Build passes"
+      ],
+      "priority": 14,
+      "passes": true,
+      "notes": "Updated Feed page tabs from Latest/Saved/Archived to Open/Saved/Tasks. Added hasIndicator support to Tabs component for blue dot. Tasks tab shows TasksView component. Search/filter hidden when on Tasks tab."
+    },
+    {
+      "id": "PF-006",
+      "title": "Update Pulse Card layouts for new card types",
+      "description": "Implement the 5 card type layouts from design",
+      "acceptanceCriteria": [
+        "Assigned View: embedded view card",
+        "Meeting Prep: account metadata + embedded meeting + action button",
+        "Website Visits: description + data table with row actions",
+        "Key Promotions: subtitle stats + data table",
+        "New Hire: narrative + single action button",
+        "All cards have bookmark/dismiss actions in header",
+        "Build passes"
+      ],
+      "priority": 15,
+      "passes": true,
+      "notes": "Created components/PulseCard with 5 content types. AssignedViewContent uses EmbeddedCard. MeetingPrepContent has account metadata, EmbeddedCard for meeting, ActionButton. WebsiteVisitsContent uses DataTable v4-inline with row actions. KeyPromotionsContent shows stats subtitle + DataTable. NewHireContent has narrative + ActionButton. Created mockPulseData.js with sample data. Feature flag USE_NEW_PULSE_CARDS controls old vs new cards."
+    },
+    {
+      "id": "PF-007",
+      "title": "Create TaskCard component",
+      "description": "Card for displaying tasks in Tasks tab",
+      "acceptanceCriteria": [
+        "Queued state: muted text, QUEUED label",
+        "Processing state: icon + title + progress bar + time",
+        "Done state: icon + title + version badge + Ready to review",
+        "Progress bar with indeterminate animation",
+        "Click to open artifact canvas",
+        "Build passes"
+      ],
+      "priority": 16,
+      "passes": true,
+      "notes": "Created components/TaskCard with three states: queued (muted, QUEUED label), processing (progress bar with time), done (checkmark, version badge, Ready to review). Keyboard accessible for done state."
+    },
+    {
+      "id": "PF-008",
+      "title": "Create TasksView for Tasks tab",
+      "description": "Full Tasks tab view with sub-filters and grouped list",
+      "acceptanceCriteria": [
+        "Sub-filter pills: ALL, NEXT, PROCESSING, DONE with counts",
+        "Tasks grouped by source pulse",
+        "Group header shows account + pulse title",
+        "Virtualized list if >50 tasks",
+        "Empty state per filter",
+        "Build passes"
+      ],
+      "priority": 17,
+      "passes": true,
+      "notes": "Created components/TasksView with filter pills (ALL/NEXT/PROCESSING/DONE), tasks grouped by source pulse, account logo and name in group headers. Empty states for no tasks and per-filter empty states."
+    },
+    {
+      "id": "PF-009",
+      "title": "Wire up action button to task queue",
+      "description": "Connect ActionButton clicks to TaskQueueContext",
+      "acceptanceCriteria": [
+        "Clicking action creates task in queue",
+        "Button shows processing state",
+        "Task appears in Tasks tab immediately",
+        "Simulated progress (for prototype)",
+        "Task completes after delay",
+        "Build passes"
+      ],
+      "priority": 18,
+      "passes": true,
+      "notes": "ActionButton component integrates with TaskQueueContext out of the box. Each content type component (MeetingPrepContent, WebsiteVisitsContent, KeyPromotionsContent, NewHireContent) uses ActionButton with proper sourceId, sourceTitle, taskTitle, accountName props. Tasks automatically queue and process."
+    },
+    {
+      "id": "PF-010",
+      "title": "Add search and filter to Feed header",
+      "description": "Search input and filter button per design",
+      "acceptanceCriteria": [
+        "Search input with placeholder 'Search feed'",
+        "Filter button with icon",
+        "Search filters visible pulses by title/content",
+        "Filter dropdown (placeholder for future)",
+        "Build passes"
+      ],
+      "priority": 19,
+      "passes": false
+    }
+  ],
+  "pendingDesignInput": [
+    "Reference designs for Pulse Feed updates",
+    "Reference designs for Chat Sidebar (Agentic) updates"
+  ]
+}

@@ -1,0 +1,93 @@
+.animatedCard {
+  /* CSS custom properties are set via inline styles from the component */
+  /* This allows for easy configuration from the central config file */
+  /* Ensure transitions are smooth */
+  will-change: opacity, transform;
+  position: relative;
+  z-index: 1;
+}
+
+/* When a card inside is showing preview, elevate the entire wrapper */
+.animatedCard:has([data-showing-preview="true"]) {
+  z-index: 9999 !important;
+}
+
+/* Hidden state - initial state before animation */
+.animatedCard.hidden {
+  opacity: 0 !important;
+  transform: translateY(var(--slide-distance)) !important;
+}
+
+/* Entering state - card is animating into view */
+.animatedCard.entering {
+  animation:
+    fadeIn var(--duration-fade) var(--easing-enter) forwards,
+    slideUp var(--duration-slide) var(--easing-enter) forwards;
+}
+
+/* Visible state - card is fully visible and at rest */
+.animatedCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Exiting state - card is leaving viewport at the top */
+.animatedCard.exiting {
+  opacity: 0;
+  transform: translateY(calc(var(--slide-distance-exit) * -1));
+  transition: 
+    opacity var(--duration-fade-exit) var(--easing-exit),
+    transform var(--duration-slide-exit) var(--easing-exit);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(var(--slide-distance));
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animatedCard.hidden {
+    opacity: 0;
+    transform: none;
+  }
+
+  .animatedCard.entering {
+    animation: fadeInOnly var(--duration-fade) var(--easing-enter);
+    transform: none;
+  }
+
+  .animatedCard.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .animatedCard.exiting {
+    opacity: 0;
+    transform: none;
+    transition: opacity var(--duration-fade-exit) var(--easing-exit);
+  }
+
+  @keyframes fadeInOnly {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

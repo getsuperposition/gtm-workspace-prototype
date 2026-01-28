@@ -1,0 +1,165 @@
+.skeletonWrapper {
+  /* CSS Variables for skeleton styling */
+  --skeleton-initial-padding: var(--spacing-3xl);
+  --skeleton-final-padding: var(--spacing-md);
+  --skeleton-pulse-color: var(--color-pulse-alt);
+  --skeleton-transition-easing: cubic-bezier(0.075, 0.82, 0.165, 1);
+  
+  position: relative;
+  overflow: hidden;
+  padding: var(--skeleton-initial-padding);
+  transition: padding var(--margin-transition-duration, 800ms) var(--skeleton-transition-easing);
+  transition-delay: var(--margin-transition-delay, 0ms);
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 100%;
+}
+
+.skeletonWrapper.expanding {
+  padding: var(--skeleton-final-padding);
+}
+
+/* Pulsing sweep overlay */
+.pulseOverlay {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--pulse-color, var(--skeleton-pulse-color)) 50%,
+    transparent 100%
+  );
+  animation: sweepAcross var(--pulse-duration) var(--skeleton-transition-easing);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes sweepAcross {
+  0% {
+    left: -100%;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    left: 100%;
+    opacity: 0.3;
+  }
+}
+
+.actionBarSkeleton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: none;
+}
+
+.skeletonButton {
+  width: 80px;
+  height: 32px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  /* Removed shimmer animation */
+}
+
+.skeletonSpacer {
+  flex: 1;
+}
+
+.tableWrapper {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 48px var(--color-shadow-light);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.headerRow {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerCell {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+}
+
+.skeletonCheckbox {
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-sm);
+}
+
+.skeletonHeaderText {
+  width: 100px;
+  height: 16px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-sm);
+}
+
+.row {
+  border-bottom: 1px solid var(--color-border);
+  animation: expandRow var(--row-expansion-duration, 200ms) var(--skeleton-transition-easing) backwards;
+  animation-delay: calc(var(--row-index, 0) * var(--row-expansion-stagger, 60ms));
+  transform-origin: top;
+}
+
+@keyframes expandRow {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+    max-height: 100px;
+  }
+}
+
+.cell {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.cellContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.skeletonAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-border-light);
+  /* Removed shimmer animation */
+  flex-shrink: 0;
+}
+
+.skeletonText {
+  width: 120px;
+  height: 14px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-sm);
+  /* Removed shimmer animation */
+}
+
+.skeletonBadge {
+  width: 80px;
+  height: 24px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-full);
+  /* Removed shimmer animation */
+}
+
+/* Removed shimmer animation - replaced with pulse sweep */

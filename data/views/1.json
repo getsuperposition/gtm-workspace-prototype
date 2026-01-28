@@ -1,0 +1,112 @@
+{
+  "id": 1,
+  "name": "Enterprise Accounts - Tech",
+  "isShared": false,
+  "tableData": {
+    "columns": [
+      { "id": "companyName", "label": "Company name", "type": "text", "visible": true, "sortable": true, "clickable": true },
+      { "id": "contactName", "label": "Contact name", "type": "text", "visible": true, "sortable": true, "primary": true },
+      { "id": "jobFunction", "label": "Job Function", "type": "text", "visible": true, "sortable": true },
+      { "id": "accountStatus", "label": "Account Status", "type": "badge", "visible": true, "sortable": true },
+      { "id": "country", "label": "Country", "type": "text", "visible": true, "sortable": true }
+    ],
+    "rows": [
+      {
+        "id": "1",
+        "contactName": "Justin Fisher",
+        "companyName": "GoodData",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "2",
+        "contactName": "Sarah Mitchell",
+        "companyName": "Microsoft",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "3",
+        "contactName": "David Chen",
+        "companyName": "IBM",
+        "jobFunction": "Compliance",
+        "accountStatus": "Disqualified",
+        "country": "United States"
+      },
+      {
+        "id": "4",
+        "contactName": "Emily Rodriguez",
+        "companyName": "Smartsheet",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "5",
+        "contactName": "Michael Thompson",
+        "companyName": "DataDog",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "6",
+        "contactName": "Jennifer Lee",
+        "companyName": "DataRobot",
+        "jobFunction": "Finance",
+        "accountStatus": "Disqualified",
+        "country": "United States"
+      },
+      {
+        "id": "7",
+        "contactName": "Robert Anderson",
+        "companyName": "Bright Horizons",
+        "jobFunction": "Compliance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "8",
+        "contactName": "Amanda White",
+        "companyName": "GoodData",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "9",
+        "contactName": "Christopher Brown",
+        "companyName": "Microsoft",
+        "jobFunction": "Executive",
+        "accountStatus": "Disqualified",
+        "country": "United States"
+      },
+      {
+        "id": "10",
+        "contactName": "Jessica Martinez",
+        "companyName": "IBM",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "11",
+        "contactName": "Daniel Wilson",
+        "companyName": "Smartsheet",
+        "jobFunction": "Compliance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "12",
+        "contactName": "Lisa Taylor",
+        "companyName": "DataDog",
+        "jobFunction": "Accounting",
+        "accountStatus": "Disqualified",
+        "country": "United States"
+      }
+    ]
+  }
+}

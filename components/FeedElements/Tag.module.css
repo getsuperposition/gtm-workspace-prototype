@@ -1,0 +1,68 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all var(--transition-base);
+}
+
+/* Size variants */
+.sm {
+  font-size: var(--font-size-2xs);
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  max-width: 100px;
+}
+
+.md {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  gap: var(--spacing-xs);
+}
+
+/* Color variants */
+.default {
+  background-color: var(--color-border-light);
+  color: var(--color-text-secondary);
+}
+
+.warning {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+[data-theme="dark"] .warning {
+  background-color: #78350F;
+  color: #FDE68A;
+}
+
+.danger {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+[data-theme="dark"] .danger {
+  background-color: #7F1D1D;
+  color: #FCA5A5;
+}
+
+/* Danger indicator dot - only for medium size */
+.md.danger::before {
+  content: '●';
+  font-size: var(--font-size-xs);
+  color: #DC2626;
+}
+
+[data-theme="dark"] .md.danger::before {
+  color: #EF4444;
+}
+
+/* Responsive adjustments for small tags */
+@media (max-width: 768px) {
+  .sm {
+    max-width: 80px;
+  }
+}

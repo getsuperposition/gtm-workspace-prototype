@@ -1,0 +1,116 @@
+# GTM Workspace V2 - Progress Log
+
+## 2026-01-26
+
+### Session Start
+- Moved prototype from concepts folder to portal/apps/gtm-workspace-v2
+- Cleaned up .git, node_modules, .next
+- Updated package.json name and dev port (3001)
+- Created CLAUDE.md with project context
+- Set up Ralph structure with initial PRD
+
+### SETUP-001: Project setup
+- npm install: SUCCESS (384 packages)
+- npm run dev: SUCCESS (Next.js 16.1.1 on port 3001)
+- Home page: LOADS
+- Status: PASS
+
+### FEED-001: Feed Component Audit
+- Documented in docs/FEED-AUDIT.md
+- Key findings: global transition:all, hardcoded colors, missing tabular-nums
+- Status: PASS
+
+### FEED-002: Chat Component Audit
+- Documented in docs/CHAT-AUDIT.md
+- Key findings: 100vh→dvh needed, animation hardcoded, aria-live missing
+- Status: PASS
+
+### FIX-001: Critical Design OS Fixes
+Files modified:
+- app/globals.css: Removed transition:all, added semantic color vars, 100vh→100dvh
+- components/ChatDetail/ChatDetail.module.css: 100vh→100dvh
+- components/FeedCard/FeedCard.module.css: transition explicit, color vars
+- components/ChatCard/ChatCard.module.css: transition explicit, tabular-nums
+- components/MessageBubble/MessageBubble.module.css: animation token, transition explicit, tabular-nums
+- components/ActivityPreviewCard/ActivityPreviewCard.module.css: tabular-nums
+- components/FeedDetail/FeedDetail.module.css: tabular-nums
+- components/FeedDetail/DetailComponents.module.css: transition explicit, color vars, tabular-nums
+
+Build: PASS
+Status: PASS
+
+### Reference Designs Received: Pulse Feed Queue Workflow
+- Analyzed 3 design screenshots from Q1 Pulses
+- Documented patterns in docs/PULSE-FEED-REDESIGN.md
+- Key concept: Artifact workflow - reps action suggested artifacts, tasks queue in background
+
+### PF-001: Task Queue Context
+- Created lib/types/tasks.ts with TaskType, TaskStatus, Task interface
+- Created contexts/TaskQueueContext.js with full CRUD + localStorage persistence
+- Simulated processing with progress updates (8-45s)
+- Added TaskQueueProvider to app/layout.js
+- Status: PASS
+
+### PF-002: ActionButton Component
+- Created components/ActionButton/ActionButton.js
+- SVG icons for meetingBrief, emailDraft, analysis, document
+- States: default (dark solid), processing (spinner), disabled
+- Primary/secondary variants, small/medium sizes
+- Integrates with TaskQueueContext
+- Status: PASS
+
+### PF-003: EmbeddedCard Component
+- Created components/EmbeddedCard/EmbeddedCard.js
+- Types: view (grid), meeting (calendar), document (file)
+- Clickable with keyboard support, chevron animation
+- Status: PASS
+
+### PF-004: DataTable v4-inline Variant
+- Created components/DataTable/variants/v4-inline/DataTableV4.js
+- Compact flex layout for pulse feed cards
+- Pagination with "X-Y of Z" format
+- tabular-nums on numeric columns
+- Status: PASS
+
+### PF-007: TaskCard Component
+- Created components/TaskCard/TaskCard.js
+- States: queued (muted), processing (progress bar), done (checkmark)
+- Progress bar with time display
+- Version badge for completed artifacts
+- Status: PASS
+
+### In Progress
+- PF-010: Add search and filter to Feed header
+
+### PF-006: PulseCard Layouts (COMPLETE)
+Created components/PulseCard/ with:
+- PulseCard.js - Main card component with header (title + timestamp + actions)
+- content-types/AssignedViewContent.js - EmbeddedCard for view
+- content-types/MeetingPrepContent.js - Account meta + EmbeddedCard + ActionButton
+- content-types/WebsiteVisitsContent.js - DataTable v4-inline with row actions
+- content-types/KeyPromotionsContent.js - Stats subtitle + DataTable
+- content-types/NewHireContent.js - Narrative text + ActionButton
+- content-types/ContentTypes.module.css - Shared styles
+- data/mockPulseData.js - 8 sample pulses with new types
+- Updated app/feed/page.js with USE_NEW_PULSE_CARDS feature flag
+Status: PASS
+
+### PF-009: Action Button Wiring (COMPLETE)
+ActionButton already integrates with TaskQueueContext.
+Content type components pass sourceId, sourceTitle, taskTitle, accountName.
+Tasks queue and process automatically.
+Status: PASS
+
+### Summary of Completed Stories
+- PF-001: TaskQueueContext ✓
+- PF-002: ActionButton ✓
+- PF-003: EmbeddedCard ✓
+- PF-004: DataTable v4-inline ✓
+- PF-005: Feed Tabs ✓
+- PF-006: PulseCard Layouts ✓
+- PF-007: TaskCard ✓
+- PF-008: TasksView ✓
+- PF-009: Action Button Wiring ✓
+
+### Remaining
+- PF-010: Search and filter UI (minor polish)

@@ -1,0 +1,87 @@
+/* ArchivedCardView - Using only global CSS variables */
+
+.archivedContainer {
+  padding: var(--spacing-md);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.archivedContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.archivedMessage {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.archivedActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.textLink {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.textLink:hover {
+  text-decoration: underline;
+}
+
+.textLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.separator {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  user-select: none;
+}
+
+.confirmation {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.checkIcon {
+  flex-shrink: 0;
+}
+
+.confirmationText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .archivedContainer {
+    padding: var(--spacing-sm);
+  }
+
+  .archivedActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+
+  .separator {
+    display: none;
+  }
+}

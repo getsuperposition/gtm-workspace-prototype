@@ -1,0 +1,175 @@
+.drawer {
+  position: fixed;
+  left: var(--sidebar-width);
+  top: 0;
+  bottom: 0;
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 90;
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.drawer.open {
+  width: 220px;
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-border);
+}
+
+.drawer.collapsed {
+  width: 0;
+  background-color: transparent;
+  border-right: 0px solid transparent;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  min-height: 56px;
+}
+
+.header h4 {
+  margin-bottom: var(--spacing-0);
+}
+
+/* Title uses global h3 styles from globals.css */
+
+/* toggleButton now uses global btn btn-ghost btn-icon-only btn-sm */
+
+/* Search Section */
+.searchWrapper {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all var(--transition-base);
+}
+
+.searchInputWrapper:focus-within {
+  border-color: var(--color-primary);
+  background-color: var(--color-white);
+}
+
+.searchIcon {
+  color: var(--color-text-light);
+  flex-shrink: 0;
+  margin-right: var(--spacing-xs);
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  padding: var(--spacing-xs) 0;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-light);
+}
+
+/* List Section */
+.listWrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list {
+  list-style: none;
+  padding: var(--spacing-xs) 0;
+  margin: 0;
+}
+
+.listItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border-radius: 0;
+}
+
+.listItem:hover {
+  background-color: var(--color-border-light);
+}
+
+.listItem.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.listItem.active .sharedIcon {
+  color: var(--color-white);
+}
+
+.sharedIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  flex-shrink: 0;
+}
+
+.itemName {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Collapsed State */
+.collapsedContent {
+  position: fixed;
+  left: var(--sidebar-width);
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: var(--spacing-md);
+  z-index: 90;
+}
+
+/* expandButton now uses global btn btn-ghost btn-icon-only btn-sm */
+
+/* Scrollbar Styling */
+.listWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.listWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.listWrapper::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.listWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-light);
+}

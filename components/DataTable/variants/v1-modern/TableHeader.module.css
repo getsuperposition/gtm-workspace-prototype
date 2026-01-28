@@ -1,0 +1,46 @@
+.headerRow {
+  background-color: var(--color-row-selected);
+  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+}
+
+.checkboxCell {
+  padding: var(--spacing-sm) var(--spacing-md);
+  width: 50px;
+}
+
+.headerCell {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+.headerCell.sortable {
+  cursor: pointer;
+}
+
+.headerCell.sortable:hover {
+  background-color: var(--color-hover-overlay);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.sortIcon {
+  font-size: var(--font-size-xs);
+  opacity: 0.5;
+  transition: all var(--transition-base);
+}
+
+.sortIcon.active {
+  opacity: 1;
+  transform: scale(1.2);
+  color: var(--color-brand);
+}

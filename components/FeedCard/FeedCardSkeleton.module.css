@@ -1,0 +1,166 @@
+.skeletonCard {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.skeletonTag {
+  width: 80px;
+  height: 24px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-full);
+  animation: shimmer 2s infinite;
+}
+
+.skeletonClose {
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonTitle {
+  height: 32px;
+  width: 60%;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  margin: 0 var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  animation: shimmer 2s infinite;
+}
+
+.instanceSlot {
+  border-top: 1px dashed var(--color-border);
+  border-bottom: 1px dashed var(--color-border);
+  background-color: var(--color-background);
+  padding: var(--spacing-lg);
+}
+
+.skeletonContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.skeletonLine {
+  height: 16px;
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-sm);
+  animation: shimmer 2s infinite;
+}
+
+.actionsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-border-light);
+  gap: var(--spacing-md);
+}
+
+.leftActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.skeletonIcon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  animation: shimmer 2s infinite;
+}
+
+.skeletonSource {
+  width: 100px;
+  height: 20px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  animation: shimmer 2s infinite;
+}
+
+.skeletonButton {
+  width: 150px;
+  height: 36px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skeletonCard {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .cardHeader {
+    padding: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .skeletonTitle {
+    margin: 0 var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .instanceSlot {
+    padding: var(--spacing-md);
+  }
+
+  .actionsBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .leftActions {
+    justify-content: center;
+  }
+
+  .skeletonButton {
+    width: 100%;
+  }
+}

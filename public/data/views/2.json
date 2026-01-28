@@ -1,0 +1,96 @@
+{
+  "id": 2,
+  "name": "Q1 Target Prospects",
+  "isShared": true,
+  "tableData": {
+    "columns": [
+      { "id": "companyName", "label": "Company name", "type": "text", "visible": true, "sortable": true, "primary": true, "clickable": true },
+      { "id": "contactName", "label": "Contact name", "type": "text", "visible": true, "sortable": true, "primary": true },
+      { "id": "jobFunction", "label": "Job Function", "type": "text", "visible": true, "sortable": true },
+      { "id": "accountStatus", "label": "Account Status", "type": "badge", "visible": true, "sortable": true },
+      { "id": "country", "label": "Country", "type": "text", "visible": true, "sortable": true }
+    ],
+    "rows": [
+      {
+        "id": "1",
+        "contactName": "Alex Johnson",
+        "companyName": "Salesforce",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "2",
+        "contactName": "Maria Garcia",
+        "companyName": "Oracle",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "3",
+        "contactName": "James Wilson",
+        "companyName": "Adobe",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "4",
+        "contactName": "Patricia Moore",
+        "companyName": "Workday",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "5",
+        "contactName": "Thomas Anderson",
+        "companyName": "ServiceNow",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "6",
+        "contactName": "Linda Martinez",
+        "companyName": "Splunk",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "7",
+        "contactName": "Richard Taylor",
+        "companyName": "Zendesk",
+        "jobFunction": "Compliance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "8",
+        "contactName": "Barbara Thomas",
+        "companyName": "Atlassian",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "Australia"
+      },
+      {
+        "id": "9",
+        "contactName": "Charles Jackson",
+        "companyName": "Twilio",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "10",
+        "contactName": "Susan White",
+        "companyName": "Zoom",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      }
+    ]
+  }
+}

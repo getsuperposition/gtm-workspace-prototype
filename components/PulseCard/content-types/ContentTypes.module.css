@@ -1,0 +1,220 @@
+/* Shared styles for PulseCard content types */
+
+/* Account metadata row */
+.accountMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.companyLogo {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.companyLogoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text-secondary);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.companyName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+}
+
+.companyNameLink {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.companyNameLink:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Entity links */
+.entityLink {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.entityLink:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.recency {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+/* Description text */
+.description {
+  margin: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Stats subtitle */
+.statsSubtitle {
+  margin: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Action row */
+.actionRow {
+  margin-top: var(--spacing-md);
+}
+
+/* Table wrapper */
+.tableWrapper {
+  margin-top: var(--spacing-sm);
+}
+
+/* --- Assigned View --- */
+.assignedView {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.viewMeta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+/* --- Meeting Prep --- */
+.meetingPrep {
+  display: flex;
+  flex-direction: column;
+}
+
+.meetingMeta {
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+}
+
+/* --- Website Visits --- */
+.websiteVisits {
+  display: flex;
+  flex-direction: column;
+}
+
+.visitorCell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+}
+
+.visitorName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.visitorRole {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+}
+
+.topPages {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+/* --- Key Promotions --- */
+.keyPromotions {
+  display: flex;
+  flex-direction: column;
+}
+
+.accountCell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.cellLogo {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+}
+
+.cellLogoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text-secondary);
+  color: var(--color-white);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-medium);
+}
+
+/* --- New Hire --- */
+.newHire {
+  display: flex;
+  flex-direction: column;
+}
+
+.narrative {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.narrativeText {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.backgroundText {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accountMeta {
+    gap: var(--spacing-xs);
+  }
+
+  .topPages {
+    max-width: 120px;
+  }
+}

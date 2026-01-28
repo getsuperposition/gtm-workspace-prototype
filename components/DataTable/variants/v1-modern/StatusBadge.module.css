@@ -1,0 +1,40 @@
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+/* Status-specific colors using existing CSS variables */
+.prospecting {
+  background-color: var(--color-brand-tint);
+  color: var(--color-brand);
+}
+
+.disqualified {
+  background-color: var(--color-text-light-tint-strong);
+  color: var(--color-text-light);
+}
+
+.qualified {
+  background-color: var(--color-brand-purple-tint);
+  color: var(--color-brand-purple);
+}
+
+.customer {
+  background-color: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.churned {
+  background-color: var(--color-text-light-tint);
+  color: var(--color-text-secondary);
+}
+
+.default {
+  background-color: var(--color-border-light);
+  color: var(--color-text-secondary);
+}

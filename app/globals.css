@@ -1,0 +1,650 @@
+/* Global CSS Variables and Base Styles */
+
+:root {
+  /* Logo */
+  --color-logo: #000000;
+
+  /* Colors - Light Theme (Default) */
+  --color-brand: #ea1b15;
+  --color-brand-purple: #a109ba;
+  --color-background: #fcfcfc;
+  --color-sidebar-bg: #FFFFFF;
+  --color-primary: #1e293b;
+  --color-primary-hover: #334155;
+  --color-primary-active: #0f172a;
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #626367;
+  --color-text-light: #aaacb0;
+  --color-border: #E5E7EB;
+  --color-border-light: #f2f3f6;
+  --color-hover-soft:  rgba(140, 110, 240, 0.06);
+  --color-hover-strong: rgba(140, 145, 240, 0.4);
+  --color-row-selected: rgba(196, 205, 231, 0.1);
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Tinted backgrounds for badges/avatars */
+  --color-brand-tint: rgba(234, 27, 21, 0.1);
+  --color-brand-tint-medium: rgba(234, 27, 21, 0.15);
+  --color-brand-purple-tint: rgba(161, 9, 186, 0.1);
+  --color-brand-purple-tint-medium: rgba(161, 9, 186, 0.15);
+  --color-primary-tint: rgba(11, 17, 35, 0.1);
+  --color-primary-tint-medium: rgba(11, 17, 35, 0.15);
+  --color-text-light-tint: rgba(170, 172, 176, 0.15);
+  --color-text-light-tint-strong: rgba(170, 172, 176, 0.2);
+  
+  /* Focus & Effects */
+  --color-focus: rgba(79, 107, 158, 0.1);
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-light: rgba(139, 135, 159, 0.1);
+  --color-pulse: rgba(59, 130, 246, 0.1);
+  --color-pulse-alt: rgba(96, 59, 246, 0.1);
+  
+  /* Hover overlays */
+  --color-hover-overlay: rgba(0, 0, 0, 0.02);
+  --color-white-overlay: rgba(255, 255, 255, 0.2);
+  
+  /* Spacing */
+  --spacing-0: 0rem;        /* 0px */
+  --spacing-2xs: 0.1rem;    /* 4px */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  
+  /* Border Radius */
+  --radius-0: 0rem;         /* 0px */
+  --radius-sm: 0.25rem;     /* 4px */
+  --radius-md: 0.5rem;      /* 8px */
+  --radius-lg: 0.75rem;     /* 12px */
+  --radius-xl: 1rem;        /* 16px */
+  --radius-full: 9999px;    /* Full circle */
+  
+  /* Font Families */
+  --font-primary: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', sans-serif;
+  --font-mono: 'DM Mono', 'Courier New', Courier, monospace;
+  
+  /* Font Sizes */
+  --font-size-2xs: 0.6875rem;    /* 11px */
+  --font-size-xs: 0.75rem;       /* 12px */
+  --font-size-sm: 0.875rem;      /* 14px */
+  --font-size-base: 1rem;        /* 16px */
+  --font-size-lg: 1.125rem;      /* 18px */
+  --font-size-xl: 1.3125rem;     /* 21px - card titles */
+  --font-size-2xl: 1.5rem;       /* 24px */
+  --font-size-3xl: 2rem;         /* 32px */
+  --font-size-4xl: 2.5rem;       /* 40px */
+  --font-size-5xl: 3rem;         /* 48px - Hero */
+  --font-size-6xl: 3.5rem;       /* 56px - Display */
+  
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 var(--color-shadow-light);
+  --shadow-md: 0 4px 6px -1px var(--color-shadow-light);
+  --shadow-lg: 0 10px 15px -3px var(--color-shadow-light);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  --transition-base: 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  --transition-slow: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  --transition-vslow: 2500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  /* Theatrical transitions - luxury feel */
+  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-gentle: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-panel: 500ms var(--ease-elegant);
+  --transition-content: 280ms var(--ease-gentle);
+  --transition-lift: 200ms var(--ease-soft);
+  
+  /* Layout */
+  --sidebar-width: 72px;
+  --max-content-width: 1200px;
+
+  /* Semantic State Colors */
+  --color-like: #2563EB;
+  --color-like-bg: #EFF6FF;
+  --color-dislike: #DC2626;
+  --color-dislike-bg: #FEE2E2;
+  --color-warning: #92400E;
+  --color-warning-bg: #FEF3C7;
+  --color-danger: #991B1B;
+  --color-danger-bg: #FEE2E2;
+  --color-danger-dot: #DC2626;
+
+  /* Action Colors - For primary CTA buttons */
+  --color-action: #1e293b;
+  --color-action-hover: #334155;
+  --color-action-active: #0f172a;
+}
+
+/* Dark Theme Token Overrides */
+[data-theme="dark"] {
+  /* Logo */
+  --color-logo: #FFFFFF;
+
+  /* Backgrounds */
+  --color-background: #10141d;
+  --color-sidebar-bg: #141724;
+  --color-white: #131623;
+
+  /* Primary Colors */
+  --color-primary: #E8E8E8;
+  --color-primary-hover: #FFFFFF;
+
+  /* Text Colors */
+  --color-text-primary: #E5E5E5;
+  --color-text-secondary: #A8A8A8;
+  --color-text-light: #6B6B6B;
+
+  /* Borders */
+  --color-border: #272b3b;
+  --color-border-light: #212639;
+
+  /* Focus & Shadows */
+  --color-focus: rgba(139, 135, 159, 0.2);
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --color-shadow-light: rgba(82, 84, 155, 0.1);
+
+  /* Hover overlays */
+  --color-hover-overlay: rgba(255, 255, 255, 0.02);
+
+  /* Semantic State Colors - Dark Mode */
+  --color-like: #60A5FA;
+  --color-like-bg: #1E3A8A;
+  --color-dislike: #F87171;
+  --color-dislike-bg: #7F1D1D;
+  --color-warning: #FDE68A;
+  --color-warning-bg: #78350F;
+  --color-danger: #FCA5A5;
+  --color-danger-bg: #7F1D1D;
+  --color-danger-dot: #EF4444;
+
+  /* Action Colors - Dark Mode */
+  --color-action: #60A5FA;
+  --color-action-hover: #93C5FD;
+  --color-action-active: #3B82F6;
+
+  /* Brand colors and pulse colors remain unchanged - they work in both themes */
+}
+
+/* ============================================
+   OCEAN THEME - Sophisticated Blue
+   ============================================ */
+[data-theme="ocean"] {
+  /* Logo & Brand */
+  --color-logo: #284367;
+  --color-brand: #284367;
+  --color-brand-purple: #3d5a80;
+
+  /* Backgrounds */
+  --color-background: #F7FCFF;
+  --color-sidebar-bg: #FFFFFF;
+  --color-white: #FFFFFF;
+
+  /* Primary Colors - Deep ocean blue */
+  --color-primary: #284367;
+  --color-primary-hover: #1d3250;
+  --color-primary-active: #152540;
+
+  /* Text Colors */
+  --color-text-primary: #284367;
+  --color-text-secondary: #4a6489;
+  --color-text-light: #8aa3c4;
+
+  /* Borders - subtle blue tints */
+  --color-border: #d4e4f1;
+  --color-border-light: #e8f2fa;
+
+  /* Tinted backgrounds */
+  --color-brand-tint: rgba(40, 67, 103, 0.08);
+  --color-brand-tint-medium: rgba(40, 67, 103, 0.12);
+  --color-primary-tint: rgba(40, 67, 103, 0.08);
+  --color-primary-tint-medium: rgba(40, 67, 103, 0.12);
+  --color-text-light-tint: rgba(138, 163, 196, 0.15);
+  --color-text-light-tint-strong: rgba(138, 163, 196, 0.2);
+
+  /* Hover effects */
+  --color-hover-soft: rgba(40, 67, 103, 0.04);
+  --color-hover-strong: rgba(40, 67, 103, 0.12);
+  --color-hover-overlay: rgba(40, 67, 103, 0.02);
+  --color-row-selected: rgba(40, 67, 103, 0.06);
+
+  /* Focus & Shadows */
+  --color-focus: rgba(40, 67, 103, 0.15);
+  --color-shadow: rgba(40, 67, 103, 0.15);
+  --color-shadow-light: rgba(40, 67, 103, 0.08);
+  --color-pulse: rgba(40, 67, 103, 0.1);
+  --color-pulse-alt: rgba(61, 90, 128, 0.1);
+
+  /* Semantic State Colors - Ocean theme */
+  --color-like: #2563EB;
+  --color-like-bg: #EFF6FF;
+  --color-dislike: #DC2626;
+  --color-dislike-bg: #FEE2E2;
+  --color-warning: #92400E;
+  --color-warning-bg: #FEF3C7;
+  --color-danger: #991B1B;
+  --color-danger-bg: #FEE2E2;
+  --color-danger-dot: #DC2626;
+
+  /* Action Colors - Ocean theme (vibrant cobalt blue) */
+  --color-action: #294F9F;
+  --color-action-hover: #1e3d7a;
+  --color-action-active: #163062;
+}
+
+/* Base Reset - No global transitions (Design OS compliance) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* Utility Classes */
+.container {
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Margin Utilities */
+.m-0 { margin: 0; }
+.mt-0 { margin-top: 0; }
+.mb-0 { margin-bottom: 0; }
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* Text Color Utilities */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-light { color: var(--color-text-light); }
+
+/* Font Weight Utilities */
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   BUTTON SYSTEM
+   ============================================ */
+
+/* Base Button - Shared foundation */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   BUTTON VARIANTS (Style)
+   ============================================ */
+
+/* Primary Button */
+.btn-primary {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-action);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-action-hover);
+  transform: scale(1.05);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--color-action-active);
+  transform: scale(0.98);
+}
+
+/* Secondary/Outline Button */
+.btn-secondary {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-border-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Ghost Button (transparent background) */
+.btn-ghost {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: var(--color-border-light);
+  color: var(--color-text-primary);
+}
+
+/* Chip/Filter Button */
+.btn-chip {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-border-light);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+}
+
+.btn-chip:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+}
+
+.btn-chip.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ============================================
+   BUTTON MODIFIERS (Size & Shape)
+   ============================================ */
+
+/* Icon-only modifier - Makes button square for icon-only use */
+.btn-icon-only {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  gap: 0;
+}
+
+/* Small icon-only */
+.btn-icon-only.btn-sm {
+  width: 28px;
+  height: 28px;
+}
+
+/* Large icon-only */
+.btn-icon-only.btn-lg {
+  width: 44px;
+  height: 44px;
+}
+
+/* Extra large icon-only */
+.btn-icon-only.btn-xl {
+  width: 40px;
+  height: 40px;
+}
+
+/* Size modifiers for regular buttons */
+.btn-sm {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-xs);
+}
+
+.btn-lg {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+}
+
+/* Shape modifiers */
+.btn-rounded {
+  border-radius: var(--radius-full);
+}
+
+.btn-square {
+  border-radius: var(--radius-sm);
+}
+
+/* Full width */
+.btn-block {
+  width: 100%;
+}
+
+/* ============================================
+   TYPOGRAPHY SYSTEM
+   ============================================ */
+
+/* Headings - Two-tier system: Display (thin) and Content (normal) */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Display tier - Thin weight for heroes and page titles */
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-thin);
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-thin);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Content tier - Normal weight for cards and UI elements */
+h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-normal);
+  margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  margin-bottom: var(--spacing-sm);
+}
+
+h5 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-xs);
+}
+
+h6 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Body Text */
+p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+/* Small Text */
+small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Strong/Bold */
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Emphasis */
+em, i {
+  font-style: italic;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* ============================================
+   HERO TYPOGRAPHY SYSTEM
+   Eyebrow + Heading pattern for hero moments
+   ============================================ */
+
+.hero {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.hero-eyebrow {
+  display: block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-thin);
+  color: var(--color-text-primary);
+  opacity: 0.7;
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.hero-heading {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-thin);
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Smaller hero variant for panels/sidebars */
+.hero-sm .hero-eyebrow {
+  font-size: var(--font-size-xl);
+}
+
+.hero-sm .hero-heading {
+  font-size: var(--font-size-xl);
+}
+
+/* Responsive hero */
+@media (max-width: 768px) {
+  .hero-eyebrow {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-heading {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-sm .hero-eyebrow {
+    font-size: var(--font-size-lg);
+  }
+
+  .hero-sm .hero-heading {
+    font-size: var(--font-size-lg);
+  }
+}

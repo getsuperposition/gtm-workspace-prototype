@@ -1,0 +1,109 @@
+.row {
+  position: relative;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Hover effect */
+.row:hover {
+  border-bottom: 1px solid var(--color-primary);
+
+}
+
+/* Selected state */
+.row.selected {
+  background-color: var(--color-hover-soft);
+}
+
+.row.selected:hover {
+  background-color: var(--color-hover-soft);
+}
+
+/* Cells */
+.checkboxCell {
+  padding: var(--spacing-md) var(--spacing-lg);
+  width: 50px;
+}
+
+.cell {
+  border-right: 1px solid var(--color-border-light);
+  position: relative;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  vertical-align: middle;
+  background-color: transparent;
+  animation: cellReveal 600ms forwards paused;
+  /* Disable global transition during animation */
+}
+
+.cell:hover {
+  box-shadow: inset 0 0 6px var(--color-shadow);
+  z-index: 2;
+}
+
+/* Start animation when delay is set */
+.cell[style*="animation-delay"] {
+  animation-play-state: running;
+}
+
+/* Failsafe: Force completion after 3 seconds */
+.cell.animationComplete {
+  animation: none;
+  color: var(--color-text-primary);
+  /* Enable transitions after animation completes - override global transition */
+  transition: all var(--transition-base) !important;
+}
+
+/* Three-stage animation sequence */
+@keyframes cellReveal {
+  /* Stage 1: Blank cell with transparent text (0ms) */
+  0% {
+    box-shadow: none;
+    background-color: transparent;
+    color: transparent;
+  }
+  
+  /* Stage 2: Flash hover color (100ms mark = 16.67% of 600ms) */
+  16.67% {
+    box-shadow: inset -48px 0 32px var(--color-hover-soft);
+    background-color: var(--color-hover-soft);
+    color: transparent;
+  }
+  
+  /* Stage 3: Fade to neutral + reveal text (100-600ms = 500ms transition) */
+  100% {
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--color-text-primary);
+  }
+}
+
+/* Ensure child elements inherit animated color */
+.cell span {
+  color: inherit;
+}
+
+/* Primary cell (contact name with avatar) */
+.primaryCell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.primaryText {
+  font-weight: var(--font-weight-semibold);
+  color: inherit;
+}
+
+/* Clickable text (company name) */
+.clickableText {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.clickableText:hover {
+  text-decoration: underline;
+  color: var(--color-brand);
+}

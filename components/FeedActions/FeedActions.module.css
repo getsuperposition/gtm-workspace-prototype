@@ -1,0 +1,67 @@
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--color-border-light);
+  border-top: 1px solid var(--color-border);
+  gap: var(--spacing-md);
+}
+
+.leftActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+}
+
+/* Active state styles for icon buttons */
+.active {
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+}
+
+.activeLike {
+  color: #2563EB;
+  background-color: #EFF6FF;
+}
+
+[data-theme="dark"] .iconButton.activeLike {
+  color: #60A5FA;
+  background-color: #1E3A8A;
+}
+
+.iconButton.activeDislike {
+  color: #DC2626;
+  background-color: #FEE2E2;
+}
+
+[data-theme="dark"] .iconButton.activeDislike {
+  color: #F87171;
+  background-color: #7F1D1D;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .actionsContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-md);
+  }
+
+  .leftActions {
+    justify-content: center;
+  }
+
+  .rightActions {
+    justify-content: stretch;
+  }
+
+  .rightActions button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,60 @@
+.checkboxWrapper {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+.checkbox:hover {
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.checkbox.checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checkboxSvg {
+  width: 12px;
+  height: 12px;
+}
+
+.checkmark {
+  stroke: var(--color-white);
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 12;
+  transition: stroke-dashoffset var(--transition-base);
+}
+
+.indeterminateLine {
+  stroke: var(--color-white);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Focus state for accessibility */
+.hiddenInput:focus-visible + .checkbox {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

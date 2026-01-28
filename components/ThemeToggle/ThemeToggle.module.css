@@ -1,0 +1,15 @@
+.toggleButton {
+  /* Global btn btn-ghost btn-icon-only btn-xl handles most styling */
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+}
+
+.toggleButton:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.15);
+}
+
+.toggleButton:active {
+  transform: scale(1.05);
+}

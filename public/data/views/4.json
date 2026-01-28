@@ -1,0 +1,112 @@
+{
+  "id": 4,
+  "name": "Renewal Opportunities",
+  "isShared": false,
+  "tableData": {
+    "columns": [
+      { "id": "companyName", "label": "Company name", "type": "text", "visible": true, "sortable": true, "primary": true, "clickable": true },
+      { "id": "contactName", "label": "Contact name", "type": "text", "visible": true, "sortable": true, "primary": true },
+      { "id": "jobFunction", "label": "Job Function", "type": "text", "visible": true, "sortable": true },
+      { "id": "accountStatus", "label": "Account Status", "type": "badge", "visible": true, "sortable": true },
+      { "id": "country", "label": "Country", "type": "text", "visible": true, "sortable": true }
+    ],
+    "rows": [
+      {
+        "id": "1",
+        "contactName": "Kevin Barnes",
+        "companyName": "GoodData",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "2",
+        "contactName": "Laura Peterson",
+        "companyName": "Smartsheet",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "3",
+        "contactName": "Gregory Ross",
+        "companyName": "DataDog",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "4",
+        "contactName": "Deborah Sanders",
+        "companyName": "DataRobot",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "5",
+        "contactName": "Raymond Powell",
+        "companyName": "Bright Horizons",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "6",
+        "contactName": "Carolyn Jenkins",
+        "companyName": "Microsoft",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "7",
+        "contactName": "Frank Perry",
+        "companyName": "IBM",
+        "jobFunction": "Compliance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "8",
+        "contactName": "Donna Russell",
+        "companyName": "Salesforce",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "9",
+        "contactName": "Harold Butler",
+        "companyName": "Oracle",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "10",
+        "contactName": "Judith Simmons",
+        "companyName": "Adobe",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "11",
+        "contactName": "Gerald Foster",
+        "companyName": "Workday",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "12",
+        "contactName": "Teresa Gray",
+        "companyName": "ServiceNow",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+.avatar {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+/* Size variants */
+.sm {
+  width: 24px;
+  height: 24px;
+  font-size: var(--font-size-2xs);
+}
+
+.md {
+  width: 32px;
+  height: 32px;
+  font-size: var(--font-size-xs);
+}
+
+.lg {
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-size-sm);
+}
+
+/* Hover effect when parent row is hovered */
+.avatar:hover {
+  transform: scale(1.1);
+}

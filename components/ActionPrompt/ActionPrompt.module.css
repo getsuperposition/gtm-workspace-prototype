@@ -1,0 +1,146 @@
+.promptContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  position: relative;
+  min-height: 400px;
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.closeButton:hover {
+  border-color: var(--color-text-secondary);
+  transform: scale(1.05);
+}
+
+.promptContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  width: 100%;
+  align-items: center;
+}
+
+.questionBubble {
+  max-width: 700px;
+  width: 100%;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubbleContent {
+  text-align: center;
+}
+
+.suggestionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  max-width: 700px;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out 0.1s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.responseForm {
+  width: 100%;
+  max-width: 700px;
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-sm);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+.responseInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background: transparent;
+}
+
+.responseInput::placeholder {
+  color: var(--color-text-light);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .promptContainer {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .closeButton {
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+  }
+
+  .questionBubble {
+    padding: var(--spacing-lg);
+  }
+
+  .bubbleContent {
+    font-size: var(--font-size-base);
+  }
+
+  .suggestionsContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .suggestionChip {
+    width: 100%;
+    text-align: center;
+  }
+}

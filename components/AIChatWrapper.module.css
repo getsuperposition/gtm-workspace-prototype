@@ -1,0 +1,111 @@
+/* Layout container - manages the split view */
+.layoutContainer {
+  display: flex;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Main content area - scrolls independently */
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  transition: flex var(--transition-panel);
+}
+
+/* Artifact canvas */
+.artifactCanvas {
+  flex-shrink: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-left: 1px solid var(--color-border);
+  background: var(--color-white);
+  transition: width var(--transition-panel);
+}
+
+/* Chat panel - full height, elegant slide */
+.chatPanel {
+  flex-shrink: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-left: 1px solid var(--color-border);
+  background: var(--color-white);
+  transition: width var(--transition-panel);
+}
+
+/* Layout states */
+
+/* Default - no panel */
+.layoutDefault .mainContent {
+  flex: 1;
+}
+
+.layoutDefault .artifactCanvas,
+.layoutDefault .chatPanel {
+  width: 0;
+  border-left-color: transparent;
+}
+
+/* With panel only (no artifact) */
+.layoutWithPanel .mainContent {
+  flex: 1;
+}
+
+.layoutWithPanel .chatPanel {
+  width: 380px;
+}
+
+/* With both artifact and panel */
+.layoutWithArtifact .mainContent {
+  display: none;
+}
+
+.layoutWithArtifact .artifactCanvas {
+  flex: 1;
+  width: auto;
+  min-width: 400px;
+}
+
+.layoutWithArtifact .chatPanel {
+  width: 380px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .layoutWithArtifact .mainContent {
+    display: none;
+  }
+
+  .layoutWithArtifact .artifactCanvas {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .layoutWithPanel .chatPanel,
+  .layoutWithArtifact .chatPanel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 380px;
+    z-index: 1000;
+  }
+
+  .layoutWithArtifact .artifactCanvas {
+    width: 100%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mainContent,
+  .artifactCanvas,
+  .chatPanel {
+    transition: none;
+  }
+}

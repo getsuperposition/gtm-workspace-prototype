@@ -1,0 +1,269 @@
+/* Shared styles for all content type components */
+
+.contentContainer {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Meeting Header & Renewal Header */
+.meetingHeader,
+.renewalHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.meetingInfo,
+.renewalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.meetingMeta,
+.renewalMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.separator {
+  color: var(--color-border);
+}
+
+.value {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+/* Attendees Section */
+.attendeesSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.attendeesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.attendee {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-base);
+}
+
+.attendeeName {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.attendeeRole {
+  color: var(--color-text-secondary);
+}
+
+/* Company Grid (for Website Visits) */
+.companyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.companyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+/* Company Logos Row */
+.companyLogosRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.moreCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 var(--spacing-sm);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+/* Account Summary */
+.summaryText {
+  color: var(--color-text-primary);
+}
+
+/* Data Table (for Website Visits) */
+.tableContainer {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.dataTable thead {
+  background-color: var(--color-border-light);
+}
+
+.dataTable th {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dataTable td {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.visitorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.visitorName {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.visitorRole {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.influenceBadge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.pagesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.pagePath {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  word-break: break-all;
+}
+
+/* Risks Section (for Renewals) */
+.risksSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.riskItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background-color: #FEE2E2;
+  border-radius: var(--radius-md);
+}
+
+[data-theme="dark"] .riskItem {
+  background-color: #7F1D1D;
+}
+
+.riskIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.riskText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Created By (for Renewals) */
+.createdBy {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.label {
+  color: var(--color-text-light);
+}
+
+.creator {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: var(--spacing-md);
+  }
+
+  .companyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tableContainer {
+    font-size: var(--font-size-xs);
+  }
+
+  .dataTable th,
+  .dataTable td {
+    padding: var(--spacing-sm);
+  }
+
+  .attendeesList {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}

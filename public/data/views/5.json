@@ -1,0 +1,128 @@
+{
+  "id": 5,
+  "name": "High-Value Leads",
+  "isShared": true,
+  "tableData": {
+    "columns": [
+      { "id": "companyName", "label": "Company name", "type": "text", "visible": true, "sortable": true, "primary": true, "clickable": true },
+      { "id": "contactName", "label": "Contact name", "type": "text", "visible": true, "sortable": true, "primary": true },
+      { "id": "jobFunction", "label": "Job Function", "type": "text", "visible": true, "sortable": true },
+      { "id": "accountStatus", "label": "Account Status", "type": "badge", "visible": true, "sortable": true },
+      { "id": "country", "label": "Country", "type": "text", "visible": true, "sortable": true }
+    ],
+    "rows": [
+      {
+        "id": "1",
+        "contactName": "Victoria Hayes",
+        "companyName": "Apple",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "2",
+        "contactName": "Brandon Howard",
+        "companyName": "Amazon",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "3",
+        "contactName": "Nicole Ward",
+        "companyName": "Google",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "4",
+        "contactName": "Jeremy Torres",
+        "companyName": "Meta",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "5",
+        "contactName": "Samantha Rivera",
+        "companyName": "Netflix",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "6",
+        "contactName": "Dennis Cooper",
+        "companyName": "Tesla",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "7",
+        "contactName": "Pamela Richardson",
+        "companyName": "Nvidia",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "8",
+        "contactName": "Carl Cox",
+        "companyName": "Intel",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "9",
+        "contactName": "Shirley Howard",
+        "companyName": "Cisco",
+        "jobFunction": "Accounting",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "10",
+        "contactName": "Russell Ward",
+        "companyName": "Adobe",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "11",
+        "contactName": "Angela Bell",
+        "companyName": "Salesforce",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "12",
+        "contactName": "Eugene Murphy",
+        "companyName": "Oracle",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      },
+      {
+        "id": "13",
+        "contactName": "Diana Bailey",
+        "companyName": "SAP",
+        "jobFunction": "Finance",
+        "accountStatus": "Prospecting",
+        "country": "Germany"
+      },
+      {
+        "id": "14",
+        "contactName": "Ralph Rivera",
+        "companyName": "IBM",
+        "jobFunction": "Executive",
+        "accountStatus": "Prospecting",
+        "country": "United States"
+      }
+    ]
+  }
+}

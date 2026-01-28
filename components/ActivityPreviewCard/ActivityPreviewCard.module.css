@@ -1,0 +1,16 @@
+/* Activity-specific footer styles */
+.tags {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.timestamp {
+  font-size: var(--font-size-2xs);
+  color: var(--color-text-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
